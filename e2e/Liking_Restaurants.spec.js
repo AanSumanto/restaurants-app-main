@@ -16,9 +16,9 @@ Scenario('liking one restaurant', async ({ I }) => {
 
     I.amOnPage('/');
 
-    I.seeElement('.restaurant__name A');
+    I.seeElement('.restaurant__name a');
 
-    const firstRestaurant = locate('.restaurant__name A').first();
+    const firstRestaurant = locate('.restaurant__name a').first();
     const firstRestaurantName = await I.grabTextFrom(firstRestaurant);
     I.click(firstRestaurant);
 
@@ -37,12 +37,12 @@ Scenario('searching restaurants', async ({ I }) => {
 
    I.amOnPage('/');
 
-   I.seeElement('.restaurant__name A');
+   I.seeElement('.restaurant__name a');
 
   const titles = [];
 
   for (let i = 1; i <= 3; i++) {
-    I.click(locate('.restaurant__name A').at(i));
+    I.click(locate('.restaurant__name a').at(i));
     I.seeElement('#favoriteButton');
     I.click('#favoriteButton');
     titles.push(await I.grabTextFrom('.restaurant__name'));

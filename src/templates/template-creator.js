@@ -3,7 +3,6 @@ import CONFIG from '../scripts/global/config';
 const createRestaurantDetailTemplate = (restaurant) => `
     <div class="restaurant_info">
         <h2 class="restaurant__name">${restaurant.name}</h2>
-        <favorite-button> </favorite-button>
         <h4>Restaurant Categories : </h4> <p>${restaurant.categories.map((categories) => categories.name)}</p>
         <h4>Address : </h4><p>${restaurant.address} 
         <h4>City: ${restaurant.city} </h4>
@@ -42,25 +41,27 @@ const createRestaurantDetailTemplate = (restaurant) => `
     </div>
 `;
 
-const createRestaurantItemTemplate = (restaurants) => `
+const createRestaurantItemTemplate = (restaurant) => `
   <div class="restaurant-item">
     <div class="restaurant-item_header">
         <picture> 
             <img 
                 class="lazyload restaurant-item_header_poster" 
-                data-src="${restaurants.pictureId ? CONFIG.BASE_IMAGE_URL + restaurants.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}"
-                alt="${restaurants.name || '-'}">                
+                data-src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}"
+                alt="${restaurant.name || '-'}"> 
             </img>
-        </picture>       
-    </div>
+        </picture>  
+    </div>     
+
+    <div class="restaurant-item_header_rating">
+        <p>⭐️<span class="restaurant-item_header_rating_score">${restaurant.rating || '-'}</span></p>
+    </div>   
+    <p>${restaurant.city}</p>
     <div class="restaurant-item_content">
-        <h3 class="restaurant__name"><a href="${`/#/detail/${restaurants.id}`}">${restaurants.name || '-'}</a>
-        <p>${restaurants.city}</p>
-            <div class="restaurant-item_header_rating">
-                <p>⭐️<span class="restaurant-item_header_rating_score">${restaurants.rating || '-'}</span></p>
-            </div>
+        <h3 class="restaurant__name"><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name || '-'}</a>
+        
         </h3>
-        <p>${restaurants.description || '-'}</p>
+        <p>${restaurant.description || '-'}</p>
     </div>
   </div>
   `;
