@@ -1,0 +1,153 @@
+@media screen and (max-width: 450px) {
+    .app-bar .app-bar_menu button{
+        padding: 20px;
+    }
+}
+
+
+@media screen and (min-width: 499px) {
+    .app-bar {
+        width: 100%;
+    }
+
+    .app-bar .app-bar_brand h1 {
+        font-size: 15px;
+    }
+
+    .app-bar .app-bar_menu button{
+        padding: 15px;
+    }
+
+    .hero img {
+        width: 100%;
+    }
+
+    .hero .hero_inner h1 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .app-bar .app-bar_brand h1 {
+        font-size: 35px;
+    }
+
+    .hero .hero_inner h1 {
+        font-size: 25px;
+    }
+
+}
+
+@media screen and (min-width: 650px) {
+    .app-bar {
+        grid-template-columns: 1fr auto;
+        padding: 8px 32px;
+        width: 100%; 
+    }
+   
+    .app-bar .app-bar_brand h1 {
+        font-size: 1.5em;
+    }
+ 
+    .app-bar .app-bar_menu {
+        display: none;
+    }
+   
+    .app-bar .app-bar_navbar {
+        position: static;
+        width: 100%;
+    }
+   
+    .app-bar .app-bar_navbar ul li {
+        display: inline-block;
+    }
+   
+    .app-bar .app-bar_navbar ul li a {
+        display: inline-block;
+        width: 120px;
+        text-align: center;
+        margin: 0;
+    }
+   
+    .restaurants {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .restaurant {
+        grid-template-columns: auto 1fr 1fr auto;
+    }
+   
+    /* .restaurant {
+        grid-template-columns: auto 1fr;
+    } */
+   
+    .restaurant .restaurant__name {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+   
+    .restaurant .restaurant_overview {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .hero .hero_inner h1 {
+        font-size: 25px;
+    }
+  }
+   
+@media screen and (min-width: 800px) {
+    .app-bar .app-bar_brand h1 {
+        font-size: 2em;
+    }
+
+    .hero .hero_inner h1 {
+        font-size: 30px;
+    }
+  }
+
+@media screen and (max-width: 850px) {
+    .app-bar .app-bar_navbar ul li a {
+        display: inline-block;
+        width: 75px;
+        text-align: center;
+        margin: 5px;
+        font-size: 15px;
+    }
+  }
+
+@media screen and (max-width: 750px) {
+    .app-bar .app-bar_navbar ul li a {
+        display: inline-block;
+        width: 50px;
+        text-align: center;
+        margin: 0;
+        font-size: 15px;
+    }
+  }
+   
+@media screen and (min-width: 850px) {
+    .restaurants {
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+   
+@media screen and (min-width: 1200px) {
+    .restaurants {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .hero img {
+        width: 100%;
+    }
+  }
+   
+@media screen and (min-width: 1600px) {
+    .restaurants {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .hero img {
+        width: 100%;
+    }
+  }
